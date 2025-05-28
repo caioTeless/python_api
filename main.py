@@ -1,5 +1,5 @@
 from flask import Flask
-from controller import transactions_controller as controller
+from controllers import transactions_controller as controller
 
 app = Flask(__name__)
 
@@ -28,4 +28,4 @@ def delete_finance(id):
     return controller.delete_finance(id)
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0')
+    app.run(host='0.0.0.0', port=3000)

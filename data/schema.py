@@ -55,6 +55,7 @@ TABLE_SCHEMA = [
         'query': '''
             CREATE TABLE IF NOT EXISTS automations(
             id INTEGER PRIMARY KEY AUTOINCREMENT,
+            transaction_id INTEGER,
             generation_date TEXT NOT NULL,
             user_id INTEGER,
             created_at TEXT,

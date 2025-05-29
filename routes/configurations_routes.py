@@ -2,7 +2,7 @@ from flask import Blueprint
 from controllers.configurations_controller import ConfigurationsController
 
 controller = ConfigurationsController()
-bp_configurations = Blueprint('configurations', __name__, url_prefix='/finances')
+bp_configurations = Blueprint('configurations', __name__, url_prefix='/finances/configurations')
 
 @bp_configurations.route('', methods=['POST'])
 def add():

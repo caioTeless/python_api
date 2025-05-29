@@ -2,7 +2,7 @@ from flask import Blueprint
 from controllers.users_controller import UsersController
 
 controller = UsersController()
-bp_users = Blueprint('users', __name__, url_prefix='/finances')
+bp_users = Blueprint('users', __name__, url_prefix='/finances/users')
 
 @bp_users.route('', methods=['POST'])
 def add():

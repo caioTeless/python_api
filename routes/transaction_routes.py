@@ -2,7 +2,7 @@ from flask import Blueprint
 from controllers.transactions_controller import TransactionsController
 
 controller = TransactionsController()
-bp_transactions = Blueprint('transactions', __name__, url_prefix='/finances')
+bp_transactions = Blueprint('transactions', __name__, url_prefix='/finances/transactions')
 
 @bp_transactions.route('', methods=['POST'])
 def add():

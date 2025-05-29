@@ -29,7 +29,7 @@ class  ApplicationDb:
             return None
         
     def insert(self, table, data):
-        if table not in ['transactions', 'users', 'products', 'configurations']:
+        if table not in ['transactions', 'users', 'products', 'configurations', 'automations']:
             return jsonify({'error': 'Tabela não permitida'}), 403
 
         fields = ', '.join(data.keys())
@@ -47,7 +47,7 @@ class  ApplicationDb:
         except Exception as e:
             return jsonify({'error': str(e)}), 500
         
-    def read_all(self, table):
+    def get_all(self, table):
         try:
             conn = self.get_db_connection()
             cursor = conn.cursor()
@@ -58,7 +58,7 @@ class  ApplicationDb:
         except Exception as e:
             return jsonify({'error': str(e)}), 500
     
-    def read_by_id(self, table, id):
+    def get(self, table, id):
         try:
             conn = self.get_db_connection()
             cursor = conn.cursor()

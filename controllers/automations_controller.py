@@ -1,8 +1,8 @@
 from controllers.base_controller import BaseController
 
-class TransactionsController:
+class AutomationsController:
     def __init__(self):
-        self.base = BaseController('transactions')
+        self.base = BaseController('automations')
         
     def add(self):
         return self.base.add()

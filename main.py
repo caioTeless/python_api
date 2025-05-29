@@ -8,24 +8,24 @@ def home():
     return 'Home page'
 
 @app.route('/finances', methods=['POST'])
-def add_finance():
-    return controller.add_finance()
+def add():
+    return controller.add()
 
 @app.route('/finances/all', methods=['GET'])
-def get_all_finances():
-    return controller.get_all_finances()
+def get_all():
+    return controller.get_all()
 
 @app.route('/finances/<int:id>', methods=['GET'])
-def finances_get(id):
-    return controller.finances_get(id)
+def get(id):
+    return controller.get(id)
 
 @app.route('/finances/<int:id>', methods=['PUT'])
-def update_finance(id):
-    return controller.update_finance(id)
+def update(id):
+    return controller.update(id)
 
 @app.route('/finances/<int:id>', methods=['DELETE'])
-def delete_finance(id):
-    return controller.delete_finance(id)
+def delete(id):
+    return controller.delete(id)
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=3000)

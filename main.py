@@ -5,7 +5,6 @@ from routes.users_routes import bp_users
 from routes.configurations_routes import bp_configurations
 from routes.automations_routes import bp_automations
 
-
 app = Flask(__name__)
 
 app.register_blueprint(bp_transactions)

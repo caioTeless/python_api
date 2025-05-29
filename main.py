@@ -1,31 +1,18 @@
 from flask import Flask
-from controllers import transactions_controller as controller
+from routes.transaction_routes import bp_transactions
+from routes.products_routes import bp_products
+from routes.users_routes import bp_users
+from routes.configurations_routes import bp_configurations
+from routes.automations_routes import bp_automations
+
 
 app = Flask(__name__)
 
-@app.route('/')
-def home():
-    return 'Home page'
-
-@app.route('/finances', methods=['POST'])
-def add():
-    return controller.add()
-
-@app.route('/finances/all', methods=['GET'])
-def get_all():
-    return controller.get_all()
-
-@app.route('/finances/<int:id>', methods=['GET'])
-def get(id):
-    return controller.get(id)
-
-@app.route('/finances/<int:id>', methods=['PUT'])
-def update(id):
-    return controller.update(id)
-
-@app.route('/finances/<int:id>', methods=['DELETE'])
-def delete(id):
-    return controller.delete(id)
+app.register_blueprint(bp_transactions)
+app.register_blueprint(bp_products)
+app.register_blueprint(bp_users)
+app.register_blueprint(bp_configurations)
+app.register_blueprint(bp_automations)
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=3000)
